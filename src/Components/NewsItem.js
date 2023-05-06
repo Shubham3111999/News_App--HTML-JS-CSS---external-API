@@ -1,15 +1,19 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-export class NewsItem extends Component {
-  render() {
-    let { title, description, imageURL, url, author, publishedAt, source } = this.props;
+ const NewsItem = (props)=> {
+
+    let { title, description, imageURL, url, author, publishedAt, source } = props;
+
     return (
       <div>
-        
-
-        <div className="card">
-        <span class="position-absolute top-0 translate-middle badge rounded-pill bg-danger" style={{left:"90%",zI
-      :"1"}}>{source}</span>
+        <div className="card" >
+          <div style={{
+          display: "flex",
+          justifyContent: "flex - end",
+          position: "absolute",
+          right: "0"}} ><span class="translate-middle badge rounded-pill bg-danger">{source}</span>
+          
+          </div>
           <img className="card-img-top" src={imageURL} alt="Card image cap" />
           <div className="card-body">
             <h5 className="card-title">{title}... </h5>
@@ -22,7 +26,7 @@ export class NewsItem extends Component {
         </div>
       </div>
     )
-  }
+  
 }
 
 export default NewsItem
